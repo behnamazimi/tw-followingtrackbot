@@ -13,7 +13,7 @@ class FollowingTrack extends EventEmitter {
         this._consumerKey = null
         this._consumerSecret = null
         this._nextIndex = 0
-        this._trackInterval = 1000 * 60 // in ms
+        this._trackInterval = 1000 * 600 // 10 minutes in ms by default
     }
 
     _parseTimeDuration(start, end) {
@@ -35,7 +35,7 @@ class FollowingTrack extends EventEmitter {
             this._consumerKey = allConfigs.consumer_key
             this._consumerSecret = allConfigs.consumer_secret
             this._token = allConfigs.token
-            this._trackInterval = allConfigs.track_interval
+            this._trackInterval = +allConfigs.track_interval * 1000
         }
 
         if (this._token) {

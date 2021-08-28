@@ -7,7 +7,7 @@ Install bot CLI through your system
 npm install -g tw-followingtrackbot
 ```
 ### 2. Set `CONSUMER_KEY` and `CONSUMER_SECRET` 
-Get the secrets of your account from your Twitter developer dashboard and set with below commands.
+Get the secrets of your account from your [Twitter developer dashboard](https://developer.twitter.com/) and set with below commands.
 ```
 ftbot set.consumer_key <YOUR_CONSUMER_KEY>
 ftbot set.consumer_secret <YOUR_CONSUMER_SECRET>
@@ -22,6 +22,11 @@ ftbot add <TARGET_USERNAME>
 ftbot start
 ```
 
+## Tips
+The free Twitter developer account only allows you to send 15 requests in 15 minutes, so if you’re using a free account you’ll have to stick with it. To get around this, each account will track every 10 minutes by default also, there is a configuration called `track_interval` that lets you change that time and it expects a **number in seconds**. You can set it like this
+```
+ftbot set.track_interval 600000 
+```
 
 ## CLI help
 
@@ -43,3 +48,9 @@ Options:
   --version  Show version number
   --help     Show help
 ```
+
+Contributing
+I would be grateful to those who helped me make the project truly perfect. So, feel free to contribute to the project.
+
+License
+MIT

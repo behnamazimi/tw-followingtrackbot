@@ -1,6 +1,6 @@
 {
   "consumer_key": "<YOUR_COUSUMER_KEY>",
-  "track_interval": 600000,
+  "track_interval": 600,
   "token": "<YOUR_API_TOKE>",
   "consumer_secret": "<YOUR_CONSUMER_SECRET>"
 }
