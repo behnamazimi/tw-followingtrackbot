@@ -1,6 +1,6 @@
 {
   "name": "tw-followingtrackbot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Twitter Following Track Bot",
   "main": "src/index.js",
   "scripts": {},
