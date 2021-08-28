@@ -1,17 +1,24 @@
 # Twitter Following Track Bot
 
 ## How to use
-1. Install first
-``` npm install -g tw-followingtrackbot```
-2. Get `CONSUMER_KEY` and `CONSUMER_SECRET` from your Twitted developer dashboard and set with below commands
+1. Install
+``` 
+npm install -g tw-followingtrackbot
 ```
-ftbot set.consumer_key <YOUR_KEY>
-ftbot set.consumer_secret <YOUR_SECRET>
+
+2. Get `CONSUMER_KEY` and `CONSUMER_SECRET` of your Twitter developer dashboard and set with below commands
 ```
-3. Add target accounts by below command
-```ftbot add <TARGET_USERNAME>```
-4. Start tracking
-```ftbot start```
+ftbot set.consumer_key <YOUR_CONSUMER_KEY>
+ftbot set.consumer_secret <YOUR_CONSUMER_SECRET>
+```
+3. Add as many target accounts as you want by this command
+```
+ftbot add <TARGET_USERNAME>
+```
+4. Start tracking by this command
+```
+ftbot start
+```
 
 
 ## CLI help
