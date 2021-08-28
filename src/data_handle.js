@@ -1,6 +1,7 @@
 const fs = require('fs');
-const targetAccountFileName = "src/data.json";
-const configFileName = "src/config.json";
+const path = require('path');
+const configFileName = path.join(__dirname, 'config.json');
+const targetAccountFileName = path.join(__dirname, 'target_accounts.json');
 
 function getConfig() {
     return getFileJsonContent(configFileName)
