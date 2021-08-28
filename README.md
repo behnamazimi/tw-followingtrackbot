@@ -12,8 +12,15 @@ Get the secrets of your account from your [Twitter developer dashboard](https://
 ftbot set.consumer_key <YOUR_CONSUMER_KEY>
 ftbot set.consumer_secret <YOUR_CONSUMER_SECRET>
 ```
+These credentials are required to get the API access token of your account. 
+
+You can also ignore consumer key and consumer secret configuration by adding API access token directly as below.
+```
+ftbot set.token <YOUR_API_TOKEN>
+```
+
 #### 3. Add target accounts 
-Add as many Twitter usernames as you want to track using this command.
+Add as many Twitter usernames as you want to track as below.
 ```
 ftbot add <TARGET_USERNAME>
 ```
@@ -22,7 +29,6 @@ ftbot add <TARGET_USERNAME>
 ftbot start
 ```
 
-## Tips
 The free Twitter developer account only allows you to send 15 requests in 15 minutes, so if you’re using a free account you’ll have to stick with it. To get around this, each account will track every 10 minutes by default also, there is a configuration called `track_interval` that lets you change that time and it expects a **number in seconds**. You can set it like this
 ```
 ftbot set.track_interval 600000 
