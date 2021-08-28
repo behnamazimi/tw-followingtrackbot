@@ -252,16 +252,16 @@ class FollowingTrack extends EventEmitter {
     }
 
     async startTracking() {
-        infoLog('Tracking started...');
-        infoLog(`Each account will be tracked every ${this._parseTimeDuration(0, this._trackInterval)}.`);
-        
         // update track interval before start 
         const allConfigs = await getConfig()
         if (allConfigs.track_interval)
             this._trackInterval = +allConfigs.track_interval * 1000
 
-        if (this._trackInterval) {
-            clearInterval(this._trackInterval)
+        infoLog('Tracking started...');
+        infoLog(`Each account will be tracked every ${this._parseTimeDuration(0, this._trackInterval)}.`);
+
+        if (this._tiid) {
+            clearInterval(this._tiid)
             this._nextIndex = 0
             this._targetAccounts = []
         }
@@ -285,7 +285,7 @@ class FollowingTrack extends EventEmitter {
             }
         }
         intervalCallback()
-        this._trackInterval = setInterval(intervalCallback, this._trackInterval)
+        this._tiid = setInterval(intervalCallback, this._trackInterval)
     }
 }
 
