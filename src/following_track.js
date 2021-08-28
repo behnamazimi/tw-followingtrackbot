@@ -251,7 +251,7 @@ class FollowingTrack extends EventEmitter {
         }
     }
 
-    startTracking() {
+    async startTracking() {
         infoLog('Tracking started...');
         infoLog(`Each account will be tracked every ${this._parseTimeDuration(0, this._trackInterval)}.`);
         
