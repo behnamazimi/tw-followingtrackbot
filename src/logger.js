@@ -1,5 +1,4 @@
 const chalk = require('chalk')
-const boxen = require("boxen");
 
 const log = {
     normalLog: (...message) => {
