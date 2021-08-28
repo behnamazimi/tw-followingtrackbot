@@ -49,8 +49,8 @@ Options:
   --help     Show help
 ```
 
-Contributing
+### Contributing
 I would be grateful to those who helped me make the project truly perfect. So, feel free to contribute to the project.
 
-License
+### License
 MIT
