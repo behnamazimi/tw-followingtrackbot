@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 const yargs = require("yargs");
 const { ft } = require(".");
-const { getConfig, setConfig } = require("./data_handle");
-const { successLog, bolder } = require("./logger");
+const { getConfig, setConfig, getAllTargetAccounts } = require("./data_handle");
+const { successLog, bolder, logGroupStart, infoLog } = require("./logger");
 
 yargs.scriptName("ftbot")
     .usage('$0 <command>')
@@ -24,6 +24,24 @@ yargs.scriptName("ftbot")
         })
     }, async function (argv) {
         await ft.delistTargetAccount(argv.username);
+    })
+    .command('all', 'show whole track list', (yargs) => { }, async function (argv) {
+        const all = await getAllTargetAccounts();
+        const allKeys = Object.keys(all)
+        let logMsg = 'No account in track list'
+        if (allKeys.length === 0) {
+            infoLog(logMsg);
+            return
+        }
+        if (allKeys.length === 1) {
+            logMsg = `There is ${allKeys.length} account in track list:`
+        } else {
+            logMsg = `There are ${allKeys.length} accounts in track list:`
+        }
+        logGroupStart(logMsg);
+        allKeys.forEach(key => {
+            successLog(`@${all[key].username}: ${all[key].name}`);
+        })
     })
     .command('track [username]', 'track an account', (yargs) => {
         yargs.positional('username', {
