@@ -82,7 +82,6 @@ class FollowingTrack extends EventEmitter {
     async _getFollowing(userId, maxResults = 1000, paginationToken = null) {
 
         if (!this._token) {
-            await getConfig()
             await this._fetchBearerToken()
         }
 
@@ -255,6 +254,12 @@ class FollowingTrack extends EventEmitter {
     startTracking() {
         infoLog('Tracking started...');
         infoLog(`Each account will be tracked every ${this._parseTimeDuration(0, this._trackInterval)}.`);
+        
+        // update track interval before start 
+        const allConfigs = await getConfig()
+        if (allConfigs.track_interval)
+            this._trackInterval = +allConfigs.track_interval * 1000
+
         if (this._trackInterval) {
             clearInterval(this._trackInterval)
             this._nextIndex = 0
