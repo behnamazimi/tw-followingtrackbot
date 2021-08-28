@@ -2,7 +2,7 @@
 
 ## How to use
 ### 1. Install
-Install bot CLI through your system
+Install CLI through your system
 ``` 
 npm install -g tw-followingtrackbot
 ```
