@@ -1,0 +1,28 @@
+{
+  "name": "tw-followingtrackbot",
+  "version": "1.0.0",
+  "description": "Twitter Following Track Bot",
+  "main": "src/index.js",
+  "scripts": {},
+  "bin": {
+    "followingtrack": "./src/cli.js",
+    "ftbot": "./src/cli.js"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "author": "Behnam Azimi",
+  "homepage": "https://github.com/behnamazimi/tw-followingtrackbot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/behnamazimi/tw-followingtrackbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/behnamazimi/tw-followingtrackbot/issues"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.2",
+    "form-data": "^4.0.0",
+    "yargs": "^17.1.1"
+  }
+}
