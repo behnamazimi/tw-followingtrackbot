@@ -8,7 +8,11 @@
     "followingtrack": "./src/cli.js",
     "ftbot": "./src/cli.js"
   },
-  "keywords": [],
+  "keywords": [
+    "twitter following track",
+    "following track bot",
+    "twitter bot"
+  ],
   "license": "MIT",
   "author": "Behnam Azimi",
   "homepage": "https://github.com/behnamazimi/tw-followingtrackbot",
