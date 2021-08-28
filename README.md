@@ -3,6 +3,8 @@
 ## How to use
 Use this bot to track if any account started following other accounts. It's easy to use and you only need a Twitter developer account to start monitoring.
 
+![Sample](./assets/sample.png)
+
 ### 1. Install
 Install CLI through your system
 ``` 
