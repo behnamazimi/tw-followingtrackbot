@@ -38,13 +38,15 @@ class FollowingTrack extends EventEmitter {
             this._trackInterval = +allConfigs.track_interval * 1000
         }
 
-        if (this._token) {
+        if (this._token && this._token !== "<YOUR_API_TOKE>") {
             return this._token
         }
 
         if (!this._consumerKey || !this._consumerSecret) {
             throw new Error("consumer key or/and consumer secret not found.")
         }
+
+        infoLog("fetching twitter api token...")
 
         let data = new FormData();
         data.append('grant_type', 'client_credentials');
@@ -74,6 +76,7 @@ class FollowingTrack extends EventEmitter {
             }
 
         } catch (e) {
+            errorLog(e)
             this.emit("new_error", e)
             return null
         }
