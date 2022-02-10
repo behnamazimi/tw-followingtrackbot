@@ -280,8 +280,6 @@ class FollowingTrack extends EventEmitter {
     }
     const intervalCallback = async () => {
       try {
-        console.log("in internal");
-        console.log(this._targetAccounts);
         if (!Object.keys(this._targetAccounts).length) {
           const all = await getAllTargetAccounts()
           this._targetAccounts = Object.keys(all).map(id => all[id])
@@ -296,7 +294,6 @@ class FollowingTrack extends EventEmitter {
           await this.trackNewFollowingByUsername(ta.username)
         }
       } catch (e) {
-        console.log("in internal catch", e);
         this.emit("new_error", e)
       }
     }
