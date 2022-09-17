@@ -103,6 +103,11 @@ class FollowingTrack extends EventEmitter {
       const {data} = await axios.get(url, {
         headers: {Authorization: `Bearer ${this._token}`}
       });
+      
+      if(data.errors?.[0]){
+        throw data.errors?.[0].detail
+      }
+
       const onlyIds = data.data.map(({id}) => id);
       return {
         ids: onlyIds,
@@ -111,6 +116,7 @@ class FollowingTrack extends EventEmitter {
         nextPageToken: data.meta?.next_token
       }
     } catch (e) {
+      console.log(333, e);
       throw new Error(e)
     }
   }
