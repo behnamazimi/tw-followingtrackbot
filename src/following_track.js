@@ -116,7 +116,6 @@ class FollowingTrack extends EventEmitter {
         nextPageToken: data.meta?.next_token
       }
     } catch (e) {
-      console.log(333, e);
       throw new Error(e)
     }
   }
